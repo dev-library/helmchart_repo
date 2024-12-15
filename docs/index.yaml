@@ -3,44 +3,44 @@ entries:
   base-chart:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-12-15T20:16:38.0811502+09:00"
+    created: "2024-12-15T21:08:20.3017625+09:00"
     description: A Helm chart for Kubernetes
     digest: 1d20404c4b4f0df4f560ff429d010ea94485e7627de28ba5c4918bc93241787b
     name: base-chart
     type: application
     urls:
-    - https://dev-library.github.io/helmchart_repository/docs/base-chart-0.1.0.tgz
+    - https://dev-library.github.io/helmchart_repo/docs/base-chart-0.1.0.tgz
     version: 0.1.0
   msa-main:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-12-15T20:16:38.0811502+09:00"
+    created: "2024-12-15T21:08:20.302311+09:00"
     description: A Helm chart for Kubernetes
     digest: 6a8c50033d6a69747dce8dddf73cd681bb1ef5c7883b69956ea023653cf2fe5b
     name: msa-main
     type: application
     urls:
-    - https://dev-library.github.io/helmchart_repository/docs/msa-main-0.1.0.tgz
+    - https://dev-library.github.io/helmchart_repo/docs/msa-main-0.1.0.tgz
     version: 0.1.0
   msa-review:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-12-15T20:16:38.0821515+09:00"
+    created: "2024-12-15T21:08:20.3028182+09:00"
     description: A Helm chart for Kubernetes
     digest: 40f912f884f2d2a71317a429085094bdcbbaf2b8d32840f31084be12bddd3525
     name: msa-review
     type: application
     urls:
-    - https://dev-library.github.io/helmchart_repository/docs/msa-review-0.1.0.tgz
+    - https://dev-library.github.io/helmchart_repo/docs/msa-review-0.1.0.tgz
     version: 0.1.0
   msa-user:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2024-12-15T20:16:38.0821515+09:00"
+    created: "2024-12-15T21:08:20.3028593+09:00"
     description: Helm chart for MSA User service
     digest: 9e4c51503f2a222b221e3b16e3570dcd69024b4dd08e1e3066f5660cd03c1320
     name: msa-user
     urls:
-    - https://dev-library.github.io/helmchart_repository/docs/msa-user-1.0.0.tgz
+    - https://dev-library.github.io/helmchart_repo/docs/msa-user-1.0.0.tgz
     version: 1.0.0
-generated: "2024-12-15T20:16:38.080151+09:00"
+generated: "2024-12-15T21:08:20.3012063+09:00"
