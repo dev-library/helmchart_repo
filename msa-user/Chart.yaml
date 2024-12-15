@@ -1,0 +1,6 @@
+apiVersion: v2
+name: msa-user
+description: Helm chart for MSA User service
+version: 1.0.0
+appVersion: "1.0"
+

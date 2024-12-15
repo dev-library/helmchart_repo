@@ -1,0 +1,18 @@
+kubernetesClusterDomain: cluster.local
+msaMain:
+  msaMain:
+    env:
+      dbHost: msa-db-service.dev-db.svc.cluster.local
+      dbPass: "12341234"
+      dbPort: "3306"
+      dbUser: root
+    image:
+      repository: makersworld/msa_svc_main
+      tag: aws_amd64
+  replicas: 1
+service:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  type: LoadBalancer

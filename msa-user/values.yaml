@@ -1,0 +1,15 @@
+replicaCount: 1
+image:
+  repository: makersworld/msa_svc_user
+  tag: aws_amd64
+  pullPolicy: IfNotPresent
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8080
+env:
+  DB_HOST: "msa-db-service.dev-db.svc.cluster.local"
+  DB_PORT: "3306"
+  DB_USER: "root"
+  DB_PASS: "12341234"
+

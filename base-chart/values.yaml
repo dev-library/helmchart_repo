@@ -1,0 +1,14 @@
+headless:
+  ports:
+  - name: mysql
+    port: 3306
+  type: ClusterIP
+kubernetesClusterDomain: cluster.local
+msaDb:
+  mysql:
+    env:
+      mysqlRootPassword: "12341234"
+    image:
+      repository: makersworld/msa-db-mysql8
+      tag: amd64
+  replicas: 1

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "msa-review.fullname" . }}-msa-review
+  labels:
+    app: msa-review
+  {{- include "msa-review.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.msaReview.replicas }}
+  selector:
+    matchLabels:
+      app: msa-review
+    {{- include "msa-review.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        app: msa-review
+      {{- include "msa-review.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - env:
+        - name: DB_HOST
+          value: {{ quote .Values.msaReview.msaReview.env.dbHost }}
+        - name: DB_PORT
+          value: {{ quote .Values.msaReview.msaReview.env.dbPort }}
+        - name: DB_USER
+          value: {{ quote .Values.msaReview.msaReview.env.dbUser }}
+        - name: DB_PASS
+          value: {{ quote .Values.msaReview.msaReview.env.dbPass }}
+        - name: KUBERNETES_CLUSTER_DOMAIN
+          value: {{ quote .Values.kubernetesClusterDomain }}
+        image: {{ .Values.msaReview.msaReview.image.repository }}:{{ .Values.msaReview.msaReview.image.tag
+          | default .Chart.AppVersion }}
+        name: msa-review
+        ports:
+        - containerPort: 8080
+        resources: {}

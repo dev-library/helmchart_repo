@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "msa-main.fullname" . }}-msa-main
+  labels:
+    app: msa-main
+  {{- include "msa-main.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.msaMain.replicas }}
+  selector:
+    matchLabels:
+      app: msa-main
+    {{- include "msa-main.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        app: msa-main
+      {{- include "msa-main.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - env:
+        - name: DB_HOST
+          value: {{ quote .Values.msaMain.msaMain.env.dbHost }}
+        - name: DB_PORT
+          value: {{ quote .Values.msaMain.msaMain.env.dbPort }}
+        - name: DB_USER
+          value: {{ quote .Values.msaMain.msaMain.env.dbUser }}
+        - name: DB_PASS
+          value: {{ quote .Values.msaMain.msaMain.env.dbPass }}
+        - name: KUBERNETES_CLUSTER_DOMAIN
+          value: {{ quote .Values.kubernetesClusterDomain }}
+        image: {{ .Values.msaMain.msaMain.image.repository }}:{{ .Values.msaMain.msaMain.image.tag
+          | default .Chart.AppVersion }}
+        name: msa-main
+        ports:
+        - containerPort: 8080
+        resources: {}
